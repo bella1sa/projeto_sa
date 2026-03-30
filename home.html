@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Livros</title>
+    <link rel="stylesheet" href="home.css">
+     <link rel="shirtcut icon" type="image/png" href="img/25829f6b8d6ca72aee817a8448ab7024-icone-de-livro-aberto.webp">
+</head>
+
+<body>
+
+    <nav class="menu-lateral">
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <ul>
+            <li class="item-menu"><a href="home.html"><i class="bi bi-house-door"></i> Início</a></li>
+            <li class="item-menu"><a href="home.html"><i class="bi bi-book"></i> Livros</a></li>
+            <li class="item-menu"><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li class="item-menu"><a href="chat.html"><i class="bi bi-info-circle"></i> Chat</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <form id="formulario" class="pesquisa">
+            <input type="text" id="search-input" placeholder="Pesquisar livro...">
+            <button class="btn-pesquisar"><i class="bi bi-search"></i></button>
+        </form>
+    </header>
+
+    <main>
+
+        <!-- Área de catálogo principal -->
+        <section class="catalogo">
+            <h2>Catálogo de Livros</h2>
+            <div class="livros-grid" id="livros-container">
+                <!-- cards aparecem aqui -->
+            </div>
+        </section>
+
+        <!-- CATÁLOGO INICIAL (fixo) -->
+        <section id="catalogo-inicial">
+
+            <h2>Romances Populares</h2>
+            <div class="livros-grid">
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/8225261-L.jpg">
+                    <div class="card-info">
+                        <h3>Orgulho e Preconceito</h3>
+                        <p>Jane Austen</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/240727-L.jpg">
+                    <div class="card-info">
+                        <h3>Jane Eyre</h3>
+                        <p>Charlotte Brontë</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/10521270-L.jpg">
+                    <div class="card-info">
+                        <h3>Anna Karenina</h3>
+                        <p>Leon Tolstói</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/10554109-L.jpg">
+                    <div class="card-info">
+                        <h3>Como Eu Era Antes de Você</h3>
+                        <p>Jojo Moyes</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Categoria Terror -->
+            <h2 class="categoria-titulo">Terror</h2>
+            <div class="categoria-linha">
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/10523366-L.jpg">
+                    <div class="card-info">
+                        <h3>O Iluminado</h3>
+                        <p>Stephen King</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/11153240-L.jpg">
+                    <div class="card-info">
+                        <h3>It - A Coisa</h3>
+                        <p>Stephen King</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/9584062-L.jpg">
+                    <div class="card-info">
+                        <h3>O Exorcista</h3>
+                        <p>William Peter Blatty</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/10238278-L.jpg">
+                    <div class="card-info">
+                        <h3>Drácula</h3>
+                        <p>Bram Stoker</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Categoria Clássicos -->
+            <h2 class="categoria-titulo">Clássicos</h2>
+            <div class="categoria-linha">
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/240727-L.jpg">
+                    <div class="card-info">
+                        <h3>Orgulho e Preconceito</h3>
+                        <p>Jane Austen</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/12623617-L.jpg">
+                    <div class="card-info">
+                        <h3>Dom Quixote</h3>
+                        <p>Miguel de Cervantes</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/8231998-L.jpg">
+                    <div class="card-info">
+                        <h3>O Morro dos Ventos Uivantes</h3>
+                        <p>Emily Brontë</p>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+                    <img src="https://covers.openlibrary.org/b/id/7222246-L.jpg">
+                    <div class="card-info">
+                        <h3>Os Miseráveis</h3>
+                        <p>Victor Hugo</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Resultados da API -->
+        <div id="resultados"></div>
+
+        <!-- Resultado da pesquisa -->
+        <section id="resultado-pesquisa" style="display:none;">
+            <h2>Resultados da Pesquisa</h2>
+            <div class="livros-grid" id="livros-container"></div>
+        </section>
+
+    </main>
+
+    <script src="home.js"></script>
+</body>
+</html>
+

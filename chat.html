@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnliBook Chat</title>
+    <link rel="stylesheet" href="chat.css">
+     <link rel="shirtcut icon" type="image/png" href="img/25829f6b8d6ca72aee817a8448ab7024-icone-de-livro-aberto.webp">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-list-sidebar">
+            <button id="new-chat-btn" class="chat-item active">New Chat</button>
+            <div id="saved-chats-container">
+            </div>
+        </div>
+
+        <div class="chat-main-area">
+            <header class="chat-header">
+                <div class="logo-container">
+                    
+                    <img src="img/logo.png" alt="OnliBook Logo" class="logo"> 
+                </div>
+                <p class="welcome-message">Onli Book</p>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">Oi tudo bem? Como posso te ajudar hoje?</div>
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" id="user-input" placeholder="Digite sua mensagem..." />
+                <button id="send-btn" class="send-button">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="chat.js"></script>
+</body>
+</html>

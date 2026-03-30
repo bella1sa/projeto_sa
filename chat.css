@@ -1,0 +1,179 @@
+/* Paleta de Cores Baseada na Imagem */
+:root {
+    --dark-teal: hsl(0, 0%, 100%); /* Fundo principal e input */
+    --mid-teal: #10403b; /* Fundo do header e mensagens do usuário */
+    --light-gray: #127369; /* Fundo da sidebar */
+    --border-gray: #10403b; /* Bordas e separadores */
+    --text-color: #ffffff;
+    --text-color-dark: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f0f0; /* Fundo da tela */
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --- 1. Sidebar (Lista de Chats) --- */
+.chat-list-sidebar {
+    width: 250px;
+    background-color: var(--light-gray);
+    border-right: 1px solid var(--border-gray);
+    overflow-y: auto;
+}
+
+.chat-item {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--text-color-dark);
+    font-size: 16px;
+    transition: background-color 0.1s;
+}
+
+.chat-item:hover {
+    background-color: var(--border-gray);
+}
+
+.chat-item.active {
+    background-color: var(--border-gray);
+    font-weight: bold;
+}
+
+/* --- 2. Área Principal de Conversa --- */
+.chat-main-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-teal); /* Fundo da conversa */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><pattern id="crescent-moon" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M5 0 A 5 5 0 0 0 5 10 A 5 5 0 0 1 5 0 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#crescent-moon)"/></svg>');
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--mid-teal);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--mid-teal);
+    height: 250px; /* Área do fundo da imagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+    /* Estilos para o círculo do logo na imagem original */
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%;
+    padding: 15px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Substitua 'placeholder_logo.png' por sua imagem de logo real */
+.logo {
+    width: 1000px; 
+    height: auto; 
+    /* Se a sua imagem de logo for transparente, use filter: brightness(1.5) para realçar */
+}
+
+.welcome-message {
+    color: var(--text-color);
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- Estilo das Mensagens --- */
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #10403b; /* Balão de conversa claro do bot */
+    color: var(--text-color-dark);
+    border-bottom-left-radius: 0;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: var(--mid-teal); /* Balão de conversa do usuário */
+    color: var(--text-color);
+    border-bottom-right-radius: 0;
+}
+
+
+/* --- 3. Input Inferior --- */
+.chat-input-container {
+    display: flex;
+    padding: 10px;
+    background-color: var(--dark-teal); 
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: #10403b; /* Verde escuro */
+    color: var(--text-color);
+    outline: none;
+}
+
+#user-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.send-button {
+    background-color: var(--mid-teal); 
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.send-button:hover {
+    background-color: #1a605c;
+}
+
+.send-button svg {
+    transform: rotate(45deg); /* Gira para simular o ícone de envio da imagem */
+}
